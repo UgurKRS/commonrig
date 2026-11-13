@@ -15,11 +15,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory()->create([
+            'name' => 'CommonRig Admin',
+            'email' => 'admin@commonrig.net',
+            'city' => 'Barcelona',
+            'role' => 'admin',
+        ]);
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'CommonRig Moderator',
+            'email' => 'moderator@commonrig.net',
+            'city' => 'Barcelona',
+            'role' => 'moderator',
         ]);
+
+        User::factory()->create([
+            'name' => 'Marta Vidal',
+            'email' => 'marta@commonrig.net',
+            'city' => 'Barcelona',
+            'bio' => 'Bass player in a rock band. I lend the gear I am not using.',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Jordi Serra',
+            'email' => 'jordi@commonrig.net',
+            'city' => 'Barcelona',
+            'bio' => 'Guitarist. Looking for gear for rehearsals and the odd gig.',
+        ]);
+
+        User::factory(6)->create();
     }
 }
